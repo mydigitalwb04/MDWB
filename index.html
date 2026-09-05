@@ -1,1130 +1,578 @@
 <!DOCTYPE html>
 <html lang="bn">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>My Digital WB</title>
 
 <meta name="description"
-content="Print Carft Studio — সরকারি পরিষেবা, PVC Card Cover, Birthday Photo Frame, Business Card, Photo Printing এবং Online Services।">
-
+content="My Digital WB - PVC Card Cover, Birthday Photo Frame, Business Card, PVC Card Printing, Photo Printing and Design Services.">
 
 <style>
-
-/*BASIC*/ *{
+*{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
 :root{
-
-    --primary:#0757a8;
-    --secondary:#0b8fce;
-    --accent:#ff9d00;
-
-    --dark:#10243e;
-    --light:#f4f8fc;
-
+    --teal:#0f766e;
+    --teal-dark:#115e59;
+    --teal-light:#ccfbf1;
+    --bg:#f4fbfa;
     --white:#ffffff;
+    --text:#173b38;
+    --muted:#647b78;
+}
 
-    --green:#149447;
-
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-
-    font-family:
-    Arial,
-    "Noto Sans Bengali",
-    sans-serif;
-
-    background:var(--light);
-
-    color:#172b4d;
-
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
+    background:var(--bg);
+    color:var(--text);
     line-height:1.6;
+}
 
-}a{text-decoration:none;color:inherit;}button{font-family:inherit;}.container{width:min(1180px,92%);margin:auto;}
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
 
 
-/*HEADER*/
+/* ================= HEADER ================= */
 
 header{
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--primary),
-        var(--secondary)
-    );
-
-    color:white;
-
     position:sticky;
-
     top:0;
-
     z-index:100;
-
-    box-shadow:
-    0 3px 15px #0002;
-
+    background:#fff;
+    border-bottom:1px solid #dcefeb;
+    box-shadow:0 3px 15px rgba(0,0,0,.05);
 }
 
 .nav{
-
     min-height:72px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    gap:20px;
-
 }
 
 .logo{
-
-    font-size:27px;
-
-    font-weight:800;
-
+    font-size:25px;
+    font-weight:900;
+    color:var(--teal-dark);
 }
 
 .logo span{
-
-    color:#ffd15c;
-
+    color:#14b8a6;
 }
 
 nav{
-
     display:flex;
-
-    gap:22px;
-
-    font-weight:600;
-
+    gap:25px;
+    font-weight:700;
 }
 
 nav a:hover{
-
-    color:#ffd15c;
-
+    color:#14b8a6;
 }
 
 .menu{
-
     display:none;
-
     font-size:28px;
-
     cursor:pointer;
-
+    color:var(--teal);
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
 
 .hero{
-
-    background:
-    linear-gradient(
-        135deg,
-        #063e79,
-        #087fbd
-    );
-
-    color:white;
-
-    padding:75px 0 65px;
-
+    padding:80px 0;
+    background:linear-gradient(135deg,#ccfbf1,#f0fdfa);
 }
 
 .hero-grid{
-
     display:grid;
-
-    grid-template-columns:
-    1.3fr .7fr;
-
-    gap:40px;
-
+    grid-template-columns:1.2fr .8fr;
+    gap:45px;
     align-items:center;
-
 }
 
 .badge{
-
     display:inline-block;
-
-    background:#ffffff20;
-
-    border:1px solid #ffffff55;
-
     padding:7px 14px;
-
     border-radius:30px;
-
+    background:#d8f7f1;
+    color:var(--teal-dark);
+    font-weight:bold;
     margin-bottom:16px;
-
 }
 
 h1{
-
-    font-size:
-    clamp(38px,6vw,65px);
-
-    line-height:1.08;
-
+    font-size:clamp(42px,6vw,68px);
+    line-height:1.05;
+    color:var(--teal-dark);
     margin-bottom:18px;
-
 }
 
 .hero p{
-
     font-size:20px;
-
-    max-width:650px;
-
-    color:white;
-
+    color:#496662;
 }
 
 .buttons{
-
     display:flex;
-
-    gap:13px;
-
+    gap:12px;
     margin-top:25px;
-
     flex-wrap:wrap;
-
 }
 
 .btn{
-
-    display:inline-block;
-
+    border:none;
+    border-radius:10px;
     padding:12px 20px;
-
-    border-radius:9px;
-
-    font-weight:700;
-
-    border:0;
-
+    font-weight:800;
     cursor:pointer;
-
+    display:inline-block;
 }
 
-.btn-primary{
-
-    background:var(--accent);
-
-    color:#16243b;
-
+.btn-teal{
+    background:var(--teal);
+    color:white;
 }
 
-.btn-light{
+.btn-teal:hover{
+    background:var(--teal-dark);
+}
 
+.btn-white{
     background:white;
-
-    color:var(--primary);
-
+    color:var(--teal);
+    border:1px solid #bde5df;
 }
+
+
+/* ================= HERO CARD ================= */
 
 .hero-card{
-
-    background:#ffffff14;
-
-    border:1px solid #ffffff38;
-
+    background:#fff;
+    border:1px solid #d8efea;
     border-radius:22px;
-
     padding:30px;
-
-    backdrop-filter:blur(8px);
-
+    box-shadow:0 15px 40px rgba(15,118,110,.10);
 }
 
 .hero-card h3{
-
-    font-size:22px;
-
-    margin-bottom:12px;
-
+    color:var(--teal-dark);
+    margin-bottom:10px;
 }
 
 .hero-card li{
-
     list-style:none;
-
-    padding:8px 0;
-
-    border-bottom:
-    1px solid #ffffff25;
-
+    padding:9px 0;
+    border-bottom:1px solid #e7f3f1;
 }
 
 
-/* =========================
-   SECTION
-========================= */
+/* ================= SECTION ================= */
 
 section{
-
     padding:65px 0;
-
 }
 
 .section-head{
-
     text-align:center;
-
     margin-bottom:35px;
-
 }
 
 .section-head h2{
-
     font-size:34px;
-
-    color:var(--dark);
-
+    color:var(--teal-dark);
 }
 
 .section-head p{
-
-    color:#60728a;
-
+    color:var(--muted);
 }
 
 
-/* =========================
-   SERVICE CARDS
-========================= */
+/* ================= SERVICE CARDS ================= */
 
 .cards{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:20px;
-
 }
 
 .card{
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:16px;
-
-    box-shadow:
-    0 7px 25px #163a5c12;
-
-    border:
-    1px solid #e7eef5;
-
-    transition:.25s;
-
+    background:#fff;
+    padding:24px;
+    border-radius:17px;
+    border:1px solid #e0efec;
+    box-shadow:0 8px 28px rgba(15,118,110,.07);
+    transition:.2s;
 }
 
 .card:hover{
-
-    transform:
-    translateY(-5px);
-
-    box-shadow:
-    0 12px 30px #163a5c20;
-
+    transform:translateY(-5px);
 }
 
 .icon{
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:13px;
-
-    background:#e9f4ff;
-
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#ecfdf5;
     display:grid;
-
     place-items:center;
-
     font-size:25px;
-
-    margin-bottom:15px;
-
+    margin-bottom:14px;
 }
 
 .card h3{
-
-    margin-bottom:8px;
-
-    color:var(--dark);
-
+    color:var(--teal-dark);
+    margin-bottom:7px;
 }
 
 .card p{
-
-    color:#66788d;
-
+    color:var(--muted);
     font-size:14px;
-
 }
 
 .order-btn{
-
     width:100%;
-
     margin-top:15px;
-
-    background:var(--primary);
-
+    background:var(--teal);
     color:white;
-
 }
 
 .order-btn:hover{
-
-    background:var(--secondary);
-
+    background:var(--teal-dark);
 }
 
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* ================= MODAL ================= */
 
 .modal{
-
     display:none;
-
     position:fixed;
-
     inset:0;
-
-    background:#0009;
-
+    background:rgba(4,47,44,.68);
     z-index:1000;
-
-    padding:20px;
-
-    overflow-y:auto;
-
+    padding:15px;
+    overflow:auto;
 }
 
-.modal.active{
-
+.modal.show{
     display:block;
-
 }
 
 .modal-box{
-
-    max-width:1000px;
-
-    margin:30px auto;
-
-    background:white;
-
+    width:min(1050px,100%);
+    margin:25px auto;
+    background:#fff;
     border-radius:20px;
-
-    padding:30px;
-
+    padding:28px;
     position:relative;
-
-    animation:
-    modalOpen .25s ease;
-
-}
-
-@keyframes modalOpen{
-
-    from{
-
-        transform:translateY(20px);
-
-        opacity:0;
-
-    }
-
-    to{
-
-        transform:translateY(0);
-
-        opacity:1;
-
-    }
-
 }
 
 .close{
-
     position:absolute;
-
-    right:20px;
-
-    top:10px;
-
-    font-size:32px;
-
+    right:18px;
+    top:4px;
+    font-size:34px;
+    color:#777;
     cursor:pointer;
-
-    color:#555;
-
 }
 
 .close:hover{
-
-    color:red;
-
-}
-
-.modal-title{
-
-    text-align:center;
-
-    margin-bottom:25px;
-
-    color:var(--dark);
-
+    color:#000;
 }
 
 
-/* =========================
-   PRODUCT GRID
-========================= */
+/* ================= PRODUCTS ================= */
 
 .product-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
-
 }
 
 .product{
-
-    border:
-    1px solid #e3eaf1;
-
+    border:1px solid #deecea;
     border-radius:15px;
-
-    padding:15px;
-
-    background:white;
-
-    box-shadow:
-    0 5px 18px #0000000b;
-
-    transition:.2s;
-
-}
-
-.product:hover{
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 10px 25px #0002;
-
+    padding:14px;
+    background:#fff;
 }
 
 .product-img{
-
-    width:100%;
-
-    height:200px;
-
-    background:#f5f8fc;
-
-    border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+    height:220px;
+    border-radius:11px;
+    background:#f3faf9;
     overflow:hidden;
-
-    margin-bottom:15px;
-
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:13px;
 }
 
 .product-img img{
-
     width:100%;
-
     height:100%;
-
     object-fit:contain;
-
-}
-
-.product h3{
-
-    color:var(--dark);
-
-    font-size:18px;
-
-    margin-bottom:5px;
-
 }
 
 .price{
-
-    color:#0b914b;
-
     font-size:20px;
-
-    font-weight:bold;
-
+    font-weight:900;
+    color:var(--teal);
 }
 
 
-/* =========================
-   ORDER FORM
-========================= */
-
-.order-form{
-
-    display:block;
-
-}
+/* ================= ORDER FORM ================= */
 
 .form-grid{
-
     display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:18px;
-
+    grid-template-columns:1fr 1fr;
+    gap:16px;
 }
 
-.form-group{
-
-    margin-bottom:10px;
-
-}
-
-.form-group.full{
-
+.full{
     grid-column:1/-1;
-
 }
 
-.form-group label{
-
+label{
     display:block;
-
-    font-weight:600;
-
+    font-weight:bold;
     margin-bottom:6px;
-
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
-
+input,
+textarea{
     width:100%;
-
     padding:12px;
-
-    border:
-    1px solid #d7e0e9;
-
-    border-radius:8px;
-
-    font-size:15px;
-
+    border:1px solid #cfe2df;
+    border-radius:9px;
     outline:none;
-
+    font-family:inherit;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-
-    border-color:
-    var(--primary);
-
+input:focus,
+textarea:focus{
+    border-color:var(--teal);
 }
 
-.submit-order{
-
-    width:100%;
-
-    background:
-    var(--green);
-
-    color:white;
-
-    font-size:17px;
-
-    padding:14px;
-
-    margin-top:10px;
-
-}
-
-.submit-order:hover{
-
-    background:#087d3d;
-
-}
-
-
-/* =========================
-   ORDER SUMMARY
-========================= */
-
-.order-summary{
-
-    background:#f4f8fc;
-
+.summary{
+    background:#effaf8;
+    border:1px solid #d9efeb;
     border-radius:12px;
-
-    padding:18px;
-
-    margin-bottom:22px;
-
-}
-
-.order-summary h3{
-
-    color:var(--dark);
-
-    margin-bottom:8px;
-
+    padding:16px;
+    margin:18px 0 22px;
 }
 
 .summary-row{
-
     display:flex;
-
     justify-content:space-between;
+    padding:4px 0;
+}
 
-    padding:5px 0;
+.submit{
+    width:100%;
+    background:var(--teal);
+    color:#fff;
+    font-size:17px;
+    margin-top:8px;
+}
 
+.submit:hover{
+    background:var(--teal-dark);
+}
+
+.note{
+    font-size:13px;
+    color:#738783;
+    text-align:center;
+    margin-top:10px;
 }
 
 
-/* =========================
-   SUCCESS
-========================= */
+/* ================= SUCCESS ================= */
 
 .success{
-
     display:none;
-
     text-align:center;
-
-    padding:35px 15px;
-
+    padding:40px 10px;
 }
 
 .success-icon{
-
-    font-size:65px;
-
-    margin-bottom:10px;
-
+    font-size:60px;
 }
 
 .success h2{
-
-    color:#11934b;
-
-    margin-bottom:8px;
-
+    color:var(--teal);
 }
 
 .order-id{
-
     display:inline-block;
-
-    margin:18px 0;
-
-    padding:12px 22px;
-
-    background:#e8f7ef;
-
-    color:#087d43;
-
-    border-radius:8px;
-
+    background:#e4f7f3;
+    color:var(--teal-dark);
     font-size:21px;
-
-    font-weight:bold;
-
-    letter-spacing:.5px;
-
+    font-weight:900;
+    padding:10px 20px;
+    border-radius:9px;
+    margin:15px;
 }
 
 
-/* =========================
-   UPDATES
-========================= */
-
-.updates{
-
-    display:grid;
-
-    grid-template-columns:
-    2fr 1fr;
-
-    gap:25px;
-
-}
-
-.update-list,
-.side-box{
-
-    background:white;
-
-    border-radius:16px;
-
-    box-shadow:
-    0 7px 25px #163a5c12;
-
-    padding:25px;
-
-}
-
-.update{
-
-    display:flex;
-
-    gap:15px;
-
-    padding:17px 0;
-
-    border-bottom:
-    1px solid #edf1f5;
-
-}
-
-.update:last-child{
-
-    border:0;
-
-}
-
-.tag{
-
-    font-size:12px;
-
-    background:#e8f4ff;
-
-    color:var(--primary);
-
-    padding:5px 9px;
-
-    border-radius:20px;
-
-    white-space:nowrap;
-
-    height:max-content;
-
-}
-
-
-/* =========================
-   CTA
-========================= */
+/* ================= ABOUT ================= */
 
 .cta{
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff9d00,
-        #ffbd3d
-    );
-
+    background:linear-gradient(135deg,#115e59,#0f766e);
     border-radius:22px;
-
-    padding:42px;
-
+    padding:45px;
     text-align:center;
-
-    color:#16243b;
-
+    color:#fff;
 }
 
 .cta h2{
-
     font-size:34px;
-
     margin-bottom:10px;
-
-}
-
-.cta p{
-
-    margin-bottom:20px;
-
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
-
-    background:#0d2138;
-
-    color:#c9d6e5;
-
-    padding:42px 0 20px;
-
+    background:#0b2926;
+    color:#cce3df;
+    padding:40px 0 18px;
 }
 
 .footer-grid{
-
     display:grid;
-
-    grid-template-columns:
-    2fr 1fr 1fr;
-
-    gap:35px;
-
+    grid-template-columns:2fr 1fr 1fr;
+    gap:30px;
 }
 
 .footer-title{
-
-    color:white;
-
+    color:#fff;
     font-size:20px;
-
-    font-weight:700;
-
-    margin-bottom:12px;
-
+    font-weight:800;
+    margin-bottom:10px;
 }
 
 footer a{
-
     display:block;
-
-    margin:7px 0;
-
+    margin:6px 0;
 }
 
 footer a:hover{
-
-    color:#ffd15c;
-
+    color:#5eead4;
 }
 
 .copyright{
-
+    border-top:1px solid rgba(255,255,255,.1);
     text-align:center;
-
-    border-top:
-    1px solid #ffffff18;
-
-    margin-top:30px;
-
-    padding-top:18px;
-
+    margin-top:25px;
+    padding-top:16px;
     font-size:13px;
-
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
     nav{
-
         display:none;
-
     }
 
     .menu{
-
         display:block;
-
     }
 
-    .hero-grid,
-    .updates{
-
+    .hero-grid{
         grid-template-columns:1fr;
-
     }
 
     .cards{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
 
     .product-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
     }
-
 }
-
 
 @media(max-width:520px){
 
     .cards,
-    .product-grid{
-
+    .product-grid,
+    .form-grid{
         grid-template-columns:1fr;
-
     }
 
-    .hero{
-
-        padding:55px 0;
-
-    }
-
-    .hero-card{
-
-        padding:22px;
-
-    }
-
-    section{
-
-        padding:48px 0;
-
+    .full{
+        grid-column:auto;
     }
 
     .footer-grid{
-
         grid-template-columns:1fr;
-
     }
 
-    h1{
-
-        font-size:42px;
-
+    .hero{
+        padding:55px 0;
     }
 
-    .form-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .form-group.full{
-
-        grid-column:auto;
-
-    }
-
-    .modal{
-
-        padding:8px;
-
+    section{
+        padding:48px 0;
     }
 
     .modal-box{
-
         padding:20px;
-
-        margin:10px auto;
-
     }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================
-     HEADER
-===================================== -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
 <div class="container nav">
 
-
-<a class="logo" href="#home">
-
-Print <span> Carft <span>Studio</span>
-
+<a href="#home" class="logo">
+My Digital <span>WB</span>
 </a>
 
-
 <nav>
-
 <a href="#home">Home</a>
-
 <a href="#services">Services</a>
-
-<a href="#updates">Updates</a>
-
 <a href="#about">About</a>
-
 <a href="#contact">Contact</a>
-
 </nav>
 
-
-<div class="menu">
-
-☰
-
-</div>
-
+<div class="menu" onclick="toggleMenu()">☰</div>
 
 </div>
 
 </header>
 
 
-
-<!-- =====================================
-     MAIN
-===================================== -->
+<!-- ================= MAIN ================= -->
 
 <main id="home">
 
@@ -1135,251 +583,97 @@ Print <span> Carft <span>Studio</span>
 
 <div class="container hero-grid">
 
-
 <div>
 
 <span class="badge">
-
-West Bengal Digital Information Portal
-
+My Digital WB
 </span>
 
-
 <h1>
-
-Print Carft Studio
-
+My Digital WB
 </h1>
 
-
 <p>
-
 সরকারি পরিষেবা এখন আপনার হাতের মুঠোয়
-
 </p>
-
 
 <div class="buttons">
 
-<a
-class="btn btn-primary"
-href="#updates"
->
-
-সর্বশেষ আপডেট দেখুন
-
+<a href="#services" class="btn btn-teal">
+View Services
 </a>
 
-
-<a
-class="btn btn-light"
-href="#services"
->
-
-পরিষেবাগুলি দেখুন
-
+<a href="#contact" class="btn btn-white">
+Contact Us
 </a>
 
 </div>
 
 </div>
-
 
 
 <div class="hero-card">
 
 <h3>
-
-Our Popular Services
-
+Popular Services
 </h3>
-
 
 <ul>
 
-<li>🪪 PVC Card Printing</li>
-
-<li>💼 Business Card Design</li>
-
-<li>🎂 Birthday Photo Frame</li>
-
 <li>📦 PVC Card Cover</li>
-
-<li>🖼️ Passport Photo</li>
+<li>🎂 Birthday Photo Frame</li>
+<li>💼 Business Card</li>
+<li>🪪 PVC Card Printing</li>
+<li>🖼️ Photo Printing</li>
 
 </ul>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =====================================
-     ONLINE SERVICES
-===================================== -->
+<!-- ================= SERVICES ================= -->
 
 <section id="services">
 
-
 <div class="container">
-
 
 <div class="section-head">
 
 <h2>
-
-Online Services
-
+Our Services
 </h2>
 
 <p>
-
-আমাদের জনপ্রিয় ডিজাইন ও প্রিন্টিং পরিষেবা
-
+Product নির্বাচন করে Order করুন
 </p>
 
 </div>
-
 
 
 <div class="cards">
-
-
-<!-- PVC CARD -->
-
-<div class="card">
-
-<div class="icon">
-
-🪪
-
-</div>
-
-<h3>
-
-PVC Card Printing
-
-</h3>
-
-<p>
-
-বিভিন্ন ধরনের PVC Card তৈরি ও Print।
-
-</p>
-
-<button
-class="btn order-btn"
-onclick="openProducts('PVC Card Printing')"
->
-
-View Products
-
-</button>
-
-</div>
-
-
-
-<!-- BIRTHDAY -->
-
-<div class="card">
-
-<div class="icon">
-
-🎂
-
-</div>
-
-<h3>
-
-Birthday Photo Frame
-
-</h3>
-
-<p>
-
-বিভিন্ন সুন্দর Birthday Photo Frame।
-
-</p>
-
-<button
-class="btn order-btn"
-onclick="openProducts('Birthday Photo Frame')"
->
-
-View Products
-
-</button>
-
-</div>
-
-
-
-<!-- BUSINESS CARD -->
-
-<div class="card">
-
-<div class="icon">
-
-💼
-
-</div>
-
-<h3>
-
-Business Card
-
-</h3>
-
-<p>
-
-Professional Business Card Design।
-
-</p>
-
-<button
-class="btn order-btn"
-onclick="openProducts('Business Card')"
->
-
-View Products
-
-</button>
-
-</div>
-
 
 
 <!-- PVC COVER -->
 
 <div class="card">
 
-<div class="icon">
-
-💳
-
-</div>
+<div class="icon">📦</div>
 
 <h3>
-
 PVC Card Cover
-
 </h3>
 
 <p>
-
-বিভিন্ন ধরনের PVC Card Cover।
-
+বিভিন্ন design-এর PVC Card Cover।
 </p>
 
 <button
 class="btn order-btn"
-onclick="openProducts('PVC Card Cover')"
->
+onclick="showProducts('PVC Card Cover')">
 
 View Products
 
@@ -1387,139 +681,174 @@ View Products
 
 </div>
 
+
+<!-- BIRTHDAY -->
+
+<div class="card">
+
+<div class="icon">🎂</div>
+
+<h3>
+Birthday Photo Frame
+</h3>
+
+<p>
+Birthday-এর জন্য সুন্দর Photo Frame।
+</p>
+
+<button
+class="btn order-btn"
+onclick="showProducts('Birthday Photo Frame')">
+
+View Products
+
+</button>
+
+</div>
+
+
+<!-- BUSINESS CARD -->
+
+<div class="card">
+
+<div class="icon">💼</div>
+
+<h3>
+Business Card
+</h3>
+
+<p>
+Professional Business Card Design।
+</p>
+
+<button
+class="btn order-btn"
+onclick="showProducts('Business Card')">
+
+View Products
+
+</button>
+
+</div>
+
+
+<!-- PVC PRINTING -->
+
+<div class="card">
+
+<div class="icon">🪪</div>
+
+<h3>
+PVC Card Printing
+</h3>
+
+<p>
+Various PVC Card Printing Service।
+</p>
+
+<button
+class="btn order-btn"
+onclick="showProducts('PVC Card Printing')">
+
+View Products
+
+</button>
+
+</div>
 
 
 <!-- PHOTO -->
 
 <div class="card">
 
-<div class="icon">
-
-🖼️
-
-</div>
+<div class="icon">🖼️</div>
 
 <h3>
-
 Photo Printing
-
 </h3>
 
 <p>
-
-Passport Photo এবং Photo Printing।
-
+Passport ও বিভিন্ন Size-এর Photo।
 </p>
 
 <button
 class="btn order-btn"
-onclick="openProducts('Photo Printing')"
->
+onclick="showProducts('Photo Printing')">
 
 View Products
 
 </button>
 
 </div>
-
 
 
 <!-- ALBUM -->
 
 <div class="card">
 
-<div class="icon">
-
-🎨
-
-</div>
+<div class="icon">🎨</div>
 
 <h3>
-
 Album Design
-
 </h3>
 
 <p>
-
-Wedding এবং বিভিন্ন Album Design।
-
+Wedding ও বিভিন্ন Album Design।
 </p>
 
 <button
 class="btn order-btn"
-onclick="openProducts('Album Design')"
->
+onclick="showProducts('Album Design')">
 
 View Products
 
 </button>
 
 </div>
-
 
 
 <!-- BANNER -->
 
 <div class="card">
 
-<div class="icon">
-
-🪧
-
-</div>
+<div class="icon">🪧</div>
 
 <h3>
-
 Banner & Poster
-
 </h3>
 
 <p>
-
-Professional Banner ও Poster Design।
-
+Custom Banner ও Poster Design।
 </p>
 
 <button
 class="btn order-btn"
-onclick="openProducts('Banner & Poster')"
->
+onclick="showProducts('Banner & Poster')">
 
 View Products
 
 </button>
 
 </div>
-
 
 
 <!-- INVITATION -->
 
 <div class="card">
 
-<div class="icon">
-
-💌
-
-</div>
+<div class="icon">💌</div>
 
 <h3>
-
 Invitation Design
-
 </h3>
 
 <p>
-
-Birthday, Wedding ও অন্যান্য Invitation।
-
+Birthday, Wedding Invitation Design।
 </p>
 
 <button
 class="btn order-btn"
-onclick="openProducts('Invitation Design')"
->
+onclick="showProducts('Invitation Design')">
 
 View Products
 
@@ -1535,475 +864,21 @@ View Products
 </section>
 
 
-
-<!-- =====================================
-     OFFLINE SERVICES
-===================================== -->
-
-<section>
-
-
-<div class="container">
-
-
-<div class="section-head">
-
-<h2>
-
-Offline Services
-
-</h2>
-
-<p>
-
-আমাদের অন্যান্য পরিষেবা
-
-</p>
-
-</div>
-
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<div class="icon">🏦</div>
-
-<h3>AePS Services</h3>
-
-<p>
-
-Cash Withdraw, Mini Statement,
-Cash Deposit, Balance Enquiry
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">💳</div>
-
-<h3>UPI Services</h3>
-
-<p>
-
-UPI Cash Withdraw
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🧾</div>
-
-<h3>Bill Payment</h3>
-
-<p>
-
-Electricity, DTH, Credit Card
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">📱</div>
-
-<h3>Mobile Recharge</h3>
-
-<p>
-
-Airtel, Vi, Jio, BSNL
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🖨️</div>
-
-<h3>Printing</h3>
-
-<p>
-
-Passport Photo, PDF, Document
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">📚</div>
-
-<h3>Lamination & Binding</h3>
-
-<p>
-
-Certificate, Document & More
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">👤</div>
-
-<h3>Profile Services</h3>
-
-<p>
-
-CV, Bio Data & Resume
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🎒</div>
-
-<h3>School Project</h3>
-
-<p>
-
-Front Page, Design & More
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🪪</div>
-
-<h3>Aadhaar Card</h3>
-
-<p>
-
-▶ Father Name Update<br>
-
-▶ Address Change<br>
-
-▶ PVC Card Order
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🗳️</div>
-
-<h3>Voter Card</h3>
-
-<p>
-
-▶ New Voter Card<br>
-
-▶ Voter Card Correction<br>
-
-▶ Mobile Number & Email ID Link
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">💳</div>
-
-<h3>PAN Card</h3>
-
-<p>
-
-▶ New PAN Card<br>
-
-▶ PAN Card Correction<br>
-
-▶ Mobile Number & Email ID Link
-
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🍚</div>
-
-<h3>Ration Card</h3>
-
-<p>
-
-▶ New Ration Card<br>
-
-▶ Ration Card Correction<br>
-
-▶ Mobile Number & Email ID Link
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================
-     UPDATES
-===================================== -->
-
-<section id="updates">
-
-
-<div class="container">
-
-
-<div class="section-head">
-
-<h2>
-
-সর্বশেষ আপডেট
-
-</h2>
-
-<p>
-
-নতুন খবর ও গুরুত্বপূর্ণ তথ্য
-
-</p>
-
-</div>
-
-
-
-<div class="updates">
-
-
-<div class="update-list">
-
-
-<div class="update">
-
-<span class="tag">
-
-সরকারি
-
-</span>
-
-<div>
-
-<h3>
-
-সরকারি প্রকল্পের নতুন আপডেট
-
-</h3>
-
-<p>
-
-নতুন ঘোষণা, যোগ্যতা ও আবেদন সংক্রান্ত তথ্য।
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="update">
-
-<span class="tag">
-
-চাকরি
-
-</span>
-
-<div>
-
-<h3>
-
-নতুন চাকরির বিজ্ঞপ্তি
-
-</h3>
-
-<p>
-
-নিয়োগের তারিখ, যোগ্যতা এবং আবেদন পদ্ধতি।
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="update">
-
-<span class="tag">
-
-অনলাইন
-
-</span>
-
-<div>
-
-<h3>
-
-Online Service Tutorial
-
-</h3>
-
-<p>
-
-বিভিন্ন সরকারি portal-এর সহজ নির্দেশিকা।
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="update">
-
-<span class="tag">
-
-ভিডিও
-
-</span>
-
-<div>
-
-<h3>
-
-My Digital WB-এর নতুন ভিডিও
-
-</h3>
-
-<p>
-
-YouTube tutorial এবং West Bengal update।
-
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-
-<div class="side-box">
-
-<h3>
-
-🔔 গুরুত্বপূর্ণ লিংক
-
-</h3>
-
-<p style="margin-top:12px">
-
-• সরকারি ওয়েবসাইট
-
-</p>
-
-<p>
-
-• চাকরির পোর্টাল
-
-</p>
-
-<p>
-
-• Aadhaar পরিষেবা
-
-</p>
-
-<p>
-
-• Voter পরিষেবা
-
-</p>
-
-<p>
-
-• PAN পরিষেবা
-
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================
-     ABOUT
-===================================== -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
-
 <div class="container">
-
 
 <div class="cta">
 
-
 <h2>
-
-My Digital WB-এর সঙ্গে যুক্ত থাকুন
-
+My Digital WB
 </h2>
 
-
 <p>
-
-সরকারি আপডেট ও online service-এর সহজ তথ্য পেতে
-নিয়মিত আমাদের website ও YouTube channel দেখুন।
-
+Printing, Design এবং Online Service-এর সহজ সমাধান।
 </p>
-
-
-<a
-class="btn btn-light"
-href="#contact"
->
-
-Contact Us
-
-</a>
-
 
 </div>
 
@@ -2015,13 +890,9 @@ Contact Us
 </main>
 
 
-
-<!-- =====================================
-     FOOTER
-===================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer id="contact">
-
 
 <div class="container footer-grid">
 
@@ -2029,15 +900,11 @@ Contact Us
 <div>
 
 <div class="footer-title">
-
 My Digital WB
-
 </div>
 
 <p>
-
 সরকারি পরিষেবা এখন আপনার হাতের মুঠোয়
-
 </p>
 
 </div>
@@ -2046,27 +913,19 @@ My Digital WB
 <div>
 
 <div class="footer-title">
-
 Quick Links
-
 </div>
 
 <a href="#home">
-
 Home
-
 </a>
 
 <a href="#services">
-
 Services
-
 </a>
 
-<a href="#updates">
-
-Update
-
+<a href="#about">
+About
 </a>
 
 </div>
@@ -2075,33 +934,15 @@ Update
 <div>
 
 <div class="footer-title">
-
 Contact Us
-
 </div>
 
-
 <a href="tel:+917074218208">
-
-📞 Mobile :
-+91 7074218208
-
+📞 +91 7074218208
 </a>
-
 
 <a href="mailto:apuofficial04@gmail.com">
-
-📧 Email :
-apuofficialbusiness@gmail.com
-
-</a>
-
-
-<a href="#">
-
-▶️ YouTube :
-My Digital WB
-
+📧 apuofficial04@gmail.com
 </a>
 
 </div>
@@ -2112,113 +953,64 @@ My Digital WB
 
 <div class="container copyright">
 
-© 2026 My Digital WB.
-All Rights Reserved.
+© 2026 My Digital WB. All Rights Reserved.
 
 </div>
-
 
 </footer>
 
 
+<!-- ================= PRODUCT MODAL ================= -->
 
-<!-- =====================================
-     PRODUCT MODAL
-===================================== -->
-
-<div
-class="modal"
-id="productModal"
->
-
+<div class="modal" id="productsModal">
 
 <div class="modal-box">
 
-
-<span
-class="close"
-onclick="closeModal()"
->
-
-×
-
-</span>
-
+<span class="close" onclick="closeProducts()">×</span>
 
 <h2
-class="modal-title"
-id="modalTitle"
->
-
-Select Product
-
+id="productTitle"
+style="text-align:center;color:#115e59;margin-bottom:25px">
 </h2>
-
 
 <div
 class="product-grid"
-id="productGrid"
->
-
-</div>
-
-
+id="productGrid">
 </div>
 
 </div>
 
+</div>
 
 
-<!-- =====================================
-     ORDER MODAL
-===================================== -->
+<!-- ================= ORDER MODAL ================= -->
 
-<div
-class="modal"
-id="orderModal"
->
-
+<div class="modal" id="orderModal">
 
 <div class="modal-box">
 
-
-<span
-class="close"
-onclick="closeOrderModal()"
->
-
-×
-
-</span>
+<span class="close" onclick="closeOrder()">×</span>
 
 
-<div id="orderArea">
+<div id="formArea">
 
+<h2 style="text-align:center;color:#115e59">
 
-<h2 class="modal-title">
-
-🛒 Place Your Order
+🛒 Order Now
 
 </h2>
 
 
-<!-- ORDER SUMMARY -->
-
-<div class="order-summary">
-
-
-<h3>
-
-Selected Product
-
-</h3>
+<div class="summary">
 
 
 <div class="summary-row">
 
-<span>Product</span>
+<span>
+Product
+</span>
 
-<strong id="summaryProduct">
+<strong id="sProduct">
 -
 </strong>
 
@@ -2227,9 +1019,11 @@ Selected Product
 
 <div class="summary-row">
 
-<span>Price</span>
+<span>
+Price
+</span>
 
-<strong id="summaryPrice">
+<strong id="sPrice">
 -
 </strong>
 
@@ -2238,9 +1032,11 @@ Selected Product
 
 <div class="summary-row">
 
-<span>Order ID</span>
+<span>
+Order ID
+</span>
 
-<strong id="summaryOrderId">
+<strong id="sOrderId">
 -
 </strong>
 
@@ -2249,272 +1045,226 @@ Selected Product
 
 </div>
 
-
-
-<!-- ORDER FORM -->
 
 <form
 id="orderForm"
 action="https://formsubmit.co/apuofficial04@gmail.com"
 method="POST"
->
+target="mailFrame">
 
-
-<!-- FormSubmit -->
 
 <input
 type="hidden"
 name="_subject"
-value="New Order - My Digital WB"
-/>
-
-
-<input
-type="hidden"
-name="_captcha"
-value="false"
-/>
+value="NEW ORDER - My Digital WB">
 
 
 <input
 type="hidden"
 name="_template"
-value="table"
-/>
+value="table">
 
-
-<!-- ORDER DATA -->
 
 <input
 type="hidden"
-id="orderIdField"
+name="_captcha"
+value="true">
+
+
+<input
+type="hidden"
 name="Order ID"
-/>
+id="fOrderId">
 
 
 <input
 type="hidden"
-id="productField"
 name="Product"
-/>
+id="fProduct">
 
 
 <input
 type="hidden"
-id="priceField"
 name="Product Price"
-/>
+id="fPrice">
 
 
 <input
 type="hidden"
-id="orderDateField"
 name="Order Date"
-/>
-
+id="fDate">
 
 
 <div class="form-grid">
 
 
-<div class="form-group">
+<div>
 
 <label>
-
 Customer Name *
-
 </label>
 
-
 <input
-type="text"
 name="Customer Name"
-placeholder="আপনার নাম লিখুন"
 required
->
+placeholder="আপনার নাম">
 
 </div>
 
 
-
-<div class="form-group">
+<div>
 
 <label>
-
 Mobile Number *
-
 </label>
 
-
 <input
-type="tel"
 name="Mobile Number"
-placeholder="10 Digit Mobile Number"
+required
+type="tel"
+inputmode="numeric"
 pattern="[0-9]{10}"
 maxlength="10"
-required
->
+placeholder="10 digit mobile number">
 
 </div>
 
 
-
-<div class="form-group">
+<div>
 
 <label>
-
-Product
-
+Email ID
 </label>
 
-
 <input
-type="text"
-id="selectedProduct"
-readonly
->
+name="Customer Email"
+type="email"
+placeholder="আপনার Email">
 
 </div>
 
 
-
-<div class="form-group">
+<div>
 
 <label>
-
 Quantity *
-
 </label>
 
-
 <input
-type="number"
 name="Quantity"
-value="1"
+type="number"
 min="1"
-required
->
+value="1"
+required>
 
 </div>
 
 
-
-<div class="form-group full">
+<div class="full">
 
 <label>
-
-Full Address *
-
+Selected Product
 </label>
 
+<input
+id="fProductVisible"
+readonly>
+
+</div>
+
+
+<div class="full">
+
+<label>
+Full Address *
+</label>
 
 <textarea
 name="Full Address"
 rows="3"
-placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন"
 required
-></textarea>
+placeholder="আপনার সম্পূর্ণ ঠিকানা লিখুন"></textarea>
 
 </div>
 
 
-
-<div class="form-group full">
+<div class="full">
 
 <label>
-
 Additional Note
-
 </label>
-
 
 <textarea
 name="Additional Note"
 rows="3"
-placeholder="কোনো বিশেষ নির্দেশ থাকলে লিখুন"
-></textarea>
+placeholder="কোনো বিশেষ নির্দেশ থাকলে লিখুন"></textarea>
 
 </div>
 
 
 </div>
-
 
 
 <button
+class="btn submit"
 type="submit"
-class="btn submit-order"
->
+id="submitBtn">
 
 ✅ Confirm Order
 
 </button>
 
 
+<p class="note">
+
+Order Details যাবে:
+<b>apuofficial04@gmail.com</b>
+
+</p>
+
+
 </form>
 
-
 </div>
-
 
 
 <!-- SUCCESS -->
 
 <div
 class="success"
-id="successMessage"
->
-
+id="successArea">
 
 <div class="success-icon">
-
 ✅
-
 </div>
 
-
 <h2>
-
-Order Successfully Placed!
-
+Order Successfully Submitted!
 </h2>
 
-
 <p>
-
-আপনার Order সফলভাবে গ্রহণ করা হয়েছে।
-
+আপনার Order Details পাঠানো হয়েছে।
 </p>
-
 
 <div
 class="order-id"
-id="showOrderId"
->
-
-MDWB-000000
-
+id="successId">
 </div>
 
-
 <p>
-
 এই Order ID-টি সংরক্ষণ করে রাখুন।
-
 </p>
 
+<br>
 
 <button
-class="btn btn-primary"
-onclick="closeOrderModal()"
-style="margin-top:15px"
->
+class="btn btn-teal"
+onclick="closeOrder()">
 
 Close
 
 </button>
 
-
 </div>
 
 
@@ -2523,451 +1273,298 @@ Close
 </div>
 
 
+<!-- HIDDEN MAIL FRAME -->
 
-<!-- =====================================
-     JAVASCRIPT
-===================================== -->
+<iframe
+name="mailFrame"
+style="display:none">
+</iframe>
+
 
 <script>
 
 
-/* =====================================
+/* =================================================
    PRODUCT DATABASE
-===================================== */
+================================================= */
 
 const products = {
 
 
-/* PVC CARD */
-
-"PVC Card Printing":[
-
-{
-
-name:"Aadhaar PVC Card",
-
-price:"₹80",
-
-image:"pvc-cover-01.png"
-
-},
-
-{
-
-name:"Voter PVC Card",
-
-price:"₹80",
-
-image:"images/pvc-cover-02.png"
-
-},
-
-{
-
-name:"PAN PVC Card",
-
-price:"₹80",
-
-image:"images/pvc-cover-03.png"
-
-},
-
-{
-
-name:"Ration Card PVC",
-
-price:"₹80",
-
-image:"images/pvc-cover-04.png"
-
-}
-
-],
-
-
-
-/* PVC COVER */
-
 "PVC Card Cover":[
 
-{
+[
+"PVC Cover - Sample 01",
+"₹30",
+"pvc-cover-01.png"
+],
 
-name:"PVC Cover - Sample 01",
+[
+"PVC Cover - Sample 02",
+"₹40",
+"pvc-cover-02.png"
+],
 
-price:"₹30",
+[
+"PVC Cover - Sample 03",
+"₹50",
+"pvc-cover-03.png"
+],
 
-image:"images/pvc-cover-01.png"
+[
+"PVC Cover - Sample 04",
+"₹50",
+"pvc-cover-04.png"
+],
 
-},
+[
+"Premium PVC Cover",
+"₹60",
+"pvc-cover-05.png"
+],
 
-{
-
-name:"PVC Cover - Sample 02",
-
-price:"₹40",
-
-image:"images/pvc-cover-02.png"
-
-},
-
-{
-
-name:"PVC Cover - Sample 03",
-
-price:"₹50",
-
-image:"images/pvc-cover-03.png"
-
-},
-
-{
-
-name:"PVC Cover - Sample 04",
-
-price:"₹50",
-
-image:"images/pvc-cover-04.png"
-
-},
-
-{
-
-name:"Premium PVC Cover",
-
-price:"₹60",
-
-image:"images/pvc-cover-05.png"
-
-},
-
-{
-
-name:"Designer PVC Cover",
-
-price:"₹70",
-
-image:"images/pvc-cover-06.png"
-
-}
+[
+"Designer PVC Cover",
+"₹70",
+"pvc-cover-06.png"
+]
 
 ],
 
-
-
-/* BIRTHDAY */
 
 "Birthday Photo Frame":[
 
-{
+[
+"Birthday Frame - Basic",
+"₹150",
+"birthday-frame-01.png"
+],
 
-name:"Birthday Frame - Basic",
+[
+"Birthday Frame - Premium",
+"₹250",
+"birthday-frame-02.png"
+],
 
-price:"₹150",
+[
+"Birthday Frame - HD",
+"₹350",
+"birthday-frame-03.png"
+],
 
-image:"images/birthday-01.png"
-
-},
-
-{
-
-name:"Birthday Frame - Premium",
-
-price:"₹250",
-
-image:"images/birthday-02.png"
-
-},
-
-{
-
-name:"Birthday Frame - HD",
-
-price:"₹350",
-
-image:"images/birthday-03.png"
-
-},
-
-{
-
-name:"Birthday Frame - Couple",
-
-price:"₹300",
-
-image:"images/birthday-04.png"
-
-},
-
-{
-
-name:"Birthday Frame - Kids",
-
-price:"₹200",
-
-image:"images/birthday-05.png"
-
-}
+[
+"Birthday Frame - Kids",
+"₹200",
+"birthday-frame-04.png"
+]
 
 ],
 
-
-
-/* BUSINESS CARD */
 
 "Business Card":[
 
-{
+[
+"Business Card - 100 pcs",
+"₹150",
+"business-card-01.png"
+],
 
-name:"Business Card - 100 pcs",
+[
+"Business Card - 200 pcs",
+"₹250",
+"business-card-02.png"
+],
 
-price:"₹150",
-
-image:"images/business-card-01.png"
-
-},
-
-{
-
-name:"Business Card - 200 pcs",
-
-price:"₹250",
-
-image:"images/business-card-02.png"
-
-},
-
-{
-
-name:"Premium Business Card",
-
-price:"₹350",
-
-image:"images/business-card-03.png"
-
-}
+[
+"Premium Business Card",
+"₹350",
+"business-card-03.png"
+]
 
 ],
 
 
+"PVC Card Printing":[
 
-/* PHOTO */
+[
+"Aadhaar PVC Card",
+"₹80",
+"pvc-print-01.png"
+],
+
+[
+"Voter PVC Card",
+"₹80",
+"pvc-print-02.png"
+],
+
+[
+"PAN PVC Card",
+"₹80",
+"pvc-print-03.png"
+],
+
+[
+"Ration PVC Card",
+"₹80",
+"pvc-print-04.png"
+]
+
+],
+
 
 "Photo Printing":[
 
-{
+[
+"Passport Photo",
+"₹30",
+"photo-print-01.png"
+],
 
-name:"Passport Photo",
+[
+"4x6 Photo Print",
+"₹20",
+"photo-print-02.png"
+],
 
-price:"₹30",
-
-image:"images/photo-01.png"
-
-},
-
-{
-
-name:"4x6 Photo Print",
-
-price:"₹20",
-
-image:"images/photo-02.png"
-
-},
-
-{
-
-name:"5x7 Photo Print",
-
-price:"₹30",
-
-image:"images/photo-03.png"
-
-}
+[
+"5x7 Photo Print",
+"₹30",
+"photo-print-03.png"
+]
 
 ],
 
-
-
-/* ALBUM */
 
 "Album Design":[
 
-{
+[
+"Basic Album Design",
+"₹500",
+"album-01.png"
+],
 
-name:"Basic Album Design",
-
-price:"₹500",
-
-image:"images/album-01.png"
-
-},
-
-{
-
-name:"Premium Album Design",
-
-price:"₹1000",
-
-image:"images/album-02.png"
-
-}
+[
+"Premium Album Design",
+"₹1000",
+"album-02.png"
+]
 
 ],
 
-
-
-/* BANNER */
 
 "Banner & Poster":[
 
-{
+[
+"Small Banner",
+"₹200",
+"banner-01.png"
+],
 
-name:"Small Banner",
+[
+"Poster Design",
+"₹150",
+"poster-01.png"
+],
 
-price:"₹200",
-
-image:"images/banner-01.png"
-
-},
-
-{
-
-name:"Poster Design",
-
-price:"₹150",
-
-image:"images/banner-02.png"
-
-},
-
-{
-
-name:"Premium Banner",
-
-price:"₹400",
-
-image:"images/banner-03.png"
-
-}
+[
+"Premium Banner",
+"₹400",
+"banner-02.png"
+]
 
 ],
 
 
-
-/* INVITATION */
-
 "Invitation Design":[
 
-{
+[
+"Birthday Invitation",
+"₹150",
+"invitation-01.png"
+],
 
-name:"Birthday Invitation",
+[
+"Wedding Invitation",
+"₹300",
+"invitation-02.png"
+],
 
-price:"₹150",
-
-image:"images/invitation-01.png"
-
-},
-
-{
-
-name:"Wedding Invitation",
-
-price:"₹300",
-
-image:"images/invitation-02.png"
-
-},
-
-{
-
-name:"Premium Invitation",
-
-price:"₹500",
-
-image:"images/invitation-03.png"
-
-}
+[
+"Premium Invitation",
+"₹500",
+"invitation-03.png"
+]
 
 ]
 
 };
 
 
+/* =================================================
+   IMAGE PATH
+================================================= */
 
-/* =====================================
-   OPEN PRODUCTS
-===================================== */
+function imagePath(filename){
 
-function openProducts(category){
+    return "images/" + filename;
 
-    const modal =
-    document.getElementById("productModal");
+}
 
-    const title =
-    document.getElementById("modalTitle");
+
+/* =================================================
+   SHOW PRODUCTS
+================================================= */
+
+function showProducts(category){
 
     const grid =
-    document.getElementById("productGrid");
+        document.getElementById("productGrid");
 
+    const title =
+        document.getElementById("productTitle");
 
-    title.innerText =
-    category + " - Select Product";
-
+    title.textContent =
+        category + " - Select Product";
 
     grid.innerHTML = "";
 
 
-    const list =
-    products[category] || [];
-
-
-    list.forEach(function(product,index){
-
+    products[category].forEach(function(product){
 
         const div =
-        document.createElement("div");
-
+            document.createElement("div");
 
         div.className =
-        "product";
+            "product";
 
 
         div.innerHTML = `
 
-            <div class="product-img">
+        <div class="product-img">
 
-                <img
-                src="${product.image}"
-                alt="${product.name}"
-                onerror="this.style.display='none';this.parentElement.innerHTML='🖼️'"
-                >
+            <img
+            src="${imagePath(product[2])}"
+            alt="${product[0]}"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;color:#777&quot;>Image not found</span>'">
 
-            </div>
+        </div>
 
+        <h3>
+        ${product[0]}
+        </h3>
 
-            <h3>
-                ${product.name}
-            </h3>
+        <div class="price">
+        ${product[1]}
+        </div>
 
+        <button
+        class="btn order-btn"
+        onclick="openOrder('${product[0]}','${product[1]}')">
 
-            <div class="price">
+        Order Now
 
-                ${product.price}
-
-            </div>
-
-
-            <button
-            class="btn order-btn"
-            onclick="openOrderForm(
-                '${escapeQuotes(product.name)}',
-                '${escapeQuotes(product.price)}'
-            )"
-            >
-
-                Order Now
-
-            </button>
+        </button>
 
         `;
 
@@ -2977,397 +1574,245 @@ function openProducts(category){
     });
 
 
-    modal.classList.add("active");
+    document
+    .getElementById("productsModal")
+    .classList.add("show");
 
 }
 
 
+/* =================================================
+   CLOSE PRODUCTS
+================================================= */
 
-/* =====================================
-   ESCAPE QUOTES
-===================================== */
-
-function escapeQuotes(text){
-
-    return text
-    .replace(/'/g,"\\'")
-    .replace(/"/g,'\\"');
-
-}
-
-
-
-/* =====================================
-   CLOSE PRODUCT MODAL
-===================================== */
-
-function closeModal(){
+function closeProducts(){
 
     document
-    .getElementById("productModal")
-    .classList.remove("active");
+    .getElementById("productsModal")
+    .classList.remove("show");
 
 }
 
 
-
-/* =====================================
+/* =================================================
    GENERATE ORDER ID
-===================================== */
+================================================= */
 
-function generateOrderId(){
+function makeOrderId(){
 
-    const now =
-    new Date();
+    const d =
+        new Date();
 
-
-    const year =
-    now.getFullYear();
-
-
-    const month =
-    String(
-        now.getMonth()+1
-    ).padStart(2,"0");
-
-
-    const day =
-    String(
-        now.getDate()
-    ).padStart(2,"0");
-
-
-    const random =
-    Math.floor(
-        1000 +
-        Math.random()*9000
-    );
-
-
-    return `MDWB-${year}${month}${day}-${random}`;
+    return "MDWB-" +
+        d.getFullYear() +
+        String(d.getMonth()+1).padStart(2,"0") +
+        String(d.getDate()).padStart(2,"0") +
+        "-" +
+        Math.floor(1000 + Math.random()*9000);
 
 }
 
 
-
-/* =====================================
+/* =================================================
    OPEN ORDER FORM
-===================================== */
+================================================= */
 
-function openOrderForm(product,price){
+function openOrder(product,price){
 
-
-    closeModal();
+    closeProducts();
 
 
     const orderId =
-    generateOrderId();
-
-
-    const now =
-    new Date();
-
-
-    const orderDate =
-    now.toLocaleString(
-        "en-IN"
-    );
+        makeOrderId();
 
 
     document
     .getElementById("orderModal")
-    .classList.add("active");
+    .classList.add("show");
 
 
     document
-    .getElementById("orderForm")
+    .getElementById("formArea")
     .style.display="block";
 
 
     document
-    .getElementById("successMessage")
+    .getElementById("successArea")
     .style.display="none";
 
 
     document
-    .getElementById("selectedProduct")
-    .value=product;
+    .getElementById("sProduct")
+    .textContent=product;
 
 
     document
-    .getElementById("orderIdField")
+    .getElementById("sPrice")
+    .textContent=price;
+
+
+    document
+    .getElementById("sOrderId")
+    .textContent=orderId;
+
+
+    document
+    .getElementById("fOrderId")
     .value=orderId;
 
 
     document
-    .getElementById("productField")
+    .getElementById("fProduct")
     .value=product;
 
 
     document
-    .getElementById("priceField")
+    .getElementById("fPrice")
     .value=price;
 
 
     document
-    .getElementById("orderDateField")
-    .value=orderDate;
+    .getElementById("fDate")
+    .value=new Date()
+    .toLocaleString("en-IN");
 
 
     document
-    .getElementById("summaryProduct")
-    .innerText=product;
-
-
-    document
-    .getElementById("summaryPrice")
-    .innerText=price;
-
-
-    document
-    .getElementById("summaryOrderId")
-    .innerText=orderId;
-
-
-    document
-    .getElementById("showOrderId")
-    .innerText=orderId;
+    .getElementById("fProductVisible")
+    .value=product;
 
 }
 
 
+/* =================================================
+   CLOSE ORDER
+================================================= */
 
-/* =====================================
-   CLOSE ORDER MODAL
-===================================== */
-
-function closeOrderModal(){
+function closeOrder(){
 
     document
     .getElementById("orderModal")
-    .classList.remove("active");
+    .classList.remove("show");
 
 }
 
 
-
-/* =====================================
+/* =================================================
    FORM SUBMIT
-===================================== */
+================================================= */
 
 document
 .getElementById("orderForm")
-.addEventListener(
-"submit",
-function(e){
-
-    e.preventDefault();
-
-
-    const form=this;
-
+.addEventListener("submit",function(){
 
     const orderId =
-    document
-    .getElementById("orderIdField")
-    .value;
+        document
+        .getElementById("fOrderId")
+        .value;
 
 
-    const submitButton =
-    form.querySelector(
-        ".submit-order"
-    );
+    const button =
+        document
+        .getElementById("submitBtn");
 
 
-    submitButton.disabled=true;
+    button.disabled=true;
+
+    button.textContent =
+        "⏳ Order পাঠানো হচ্ছে...";
 
 
-    submitButton.innerText =
-    "⏳ Order পাঠানো হচ্ছে...";
+    setTimeout(function(){
+
+        document
+        .getElementById("formArea")
+        .style.display="none";
 
 
-    fetch(
-        form.action,
-        {
-
-            method:"POST",
-
-            body:
-            new FormData(form),
-
-            headers:{
-                "Accept":
-                "application/json"
-            }
-
-        }
-    )
+        document
+        .getElementById("successArea")
+        .style.display="block";
 
 
-    .then(function(response){
+        document
+        .getElementById("successId")
+        .textContent=orderId;
 
 
-        if(response.ok){
-
-            form.style.display =
-            "none";
-
-
-            document
-            .getElementById("successMessage")
-            .style.display =
-            "block";
-
-
-            document
-            .getElementById("showOrderId")
-            .innerText =
-            orderId;
-
-
-            form.reset();
-
-
-        }
-
-        else{
-
-            alert(
-            "Order পাঠানো যায়নি। আবার চেষ্টা করুন।"
-            );
-
-        }
-
-
-    })
-
-
-    .catch(function(error){
-
-        console.error(error);
-
-
-        alert(
-        "Internet connection অথবা email service-এ সমস্যা হয়েছে।"
-        );
-
-    })
-
-
-    .finally(function(){
-
-        submitButton.disabled=false;
-
-        submitButton.innerText =
-        "✅ Confirm Order";
-
-    });
+    },1800);
 
 });
 
 
-
-/* =====================================
-   CLOSE WHEN CLICK OUTSIDE
-===================================== */
-
-window.addEventListener(
-"click",
-function(event){
-
-
-    const productModal =
-    document.getElementById(
-        "productModal"
-    );
-
-
-    const orderModal =
-    document.getElementById(
-        "orderModal"
-    );
-
-
-    if(
-        event.target ===
-        productModal
-    ){
-
-        closeModal();
-
-    }
-
-
-    if(
-        event.target ===
-        orderModal
-    ){
-
-        closeOrderModal();
-
-    }
-
-});
-
-
-
-/* =====================================
+/* =================================================
    MOBILE MENU
-===================================== */
+================================================= */
 
-document
-.querySelector(".menu")
-.addEventListener(
-"click",
-function(){
+function toggleMenu(){
 
     const nav =
-    document.querySelector("nav");
+        document.querySelector("nav");
 
 
-    if(
-        nav.style.display ===
-        "flex"
-    ){
+    if(nav.style.display === "flex"){
 
-        nav.style.display =
-        "none";
+        nav.style.display="none";
 
     }
 
     else{
 
-        nav.style.display =
-        "flex";
+        nav.style.display="flex";
 
-        nav.style.flexDirection =
-        "column";
+        nav.style.flexDirection="column";
 
-        nav.style.position =
-        "absolute";
+        nav.style.position="absolute";
 
-        nav.style.top =
-        "72px";
+        nav.style.top="72px";
 
-        nav.style.left =
-        "0";
+        nav.style.left="0";
 
-        nav.style.right =
-        "0";
+        nav.style.right="0";
 
-        nav.style.padding =
-        "20px";
+        nav.style.padding="18px 5%";
 
-        nav.style.background =
-        "#0757a8";
+        nav.style.background="#ffffff";
+
+    }
+
+}
+
+
+/* =================================================
+   CLOSE MODAL WHEN OUTSIDE CLICK
+================================================= */
+
+window.addEventListener("click",function(event){
+
+
+    if(
+        event.target ===
+        document.getElementById("productsModal")
+    ){
+
+        closeProducts();
+
+    }
+
+
+    if(
+        event.target ===
+        document.getElementById("orderModal")
+    ){
+
+        closeOrder();
 
     }
 
 });
 
+
 </script>
 
-
 </body>
-
 </html>
